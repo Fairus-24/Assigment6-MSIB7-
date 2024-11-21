@@ -4,7 +4,6 @@ import Search from './Search';
 import Movie from './Movie';
 import './style.css';
 
-
 const API_KEY = 'daf37fd5';
 const API_URL = `https://www.omdbapi.com/?apikey=${API_KEY}`;
 
@@ -31,9 +30,9 @@ const App = () => {
   }, []);
 
   const handleSearch = (term) => {
-    setSearchTerm(term);
+    setSearchTerm(term); // Mengupdate searchTerm
     if (term.trim()) {
-      fetchMovies(term);
+      fetchMovies(term); // Memanggil fetchMovies dengan searchTerm
     }
   };
 
@@ -42,7 +41,7 @@ const App = () => {
       <Header title="MovieLand" />
       <Search onSearch={handleSearch} />
       <p style={{ textAlign: "center", marginTop: "10px", color: "gray" }}>
-        {searchMessage}
+        {searchMessage} <strong>"{searchTerm}"</strong>
       </p>
       <div className="movie-list">
         {movies.length > 0 ? (
@@ -58,4 +57,4 @@ const App = () => {
 };
 
 export default App;
-
+  

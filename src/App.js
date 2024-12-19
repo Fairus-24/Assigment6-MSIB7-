@@ -1,10 +1,10 @@
-import React, { useState, useEffect } from 'react';
-import Header from './Header';
-import Search from './Search';
-import Movie from './Movie';
-import './style.css';
+import React, { useState, useEffect } from "react";
+import Header from "./Header";
+import Search from "./Search";
+import Movie from "./Movie";
+import "./style.css";
 
-const API_KEY = 'daf37fd5';
+const API_KEY = process.env.REACT_APP_OMDB_API_KEY; // Panggil dari environment variable
 const API_URL = `https://www.omdbapi.com/?apikey=${API_KEY}`;
 
 const App = () => {
@@ -57,4 +57,3 @@ const App = () => {
 };
 
 export default App;
-  
